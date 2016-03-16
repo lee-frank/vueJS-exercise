@@ -1,4 +1,5 @@
 import Vue from 'vue'
+
 import App from './App'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
@@ -14,13 +15,20 @@ var router = new VueRouter()
 
 router.map({
   '/Welcome': {
-    component: Welcome
+    name: 'Welcome',
+    component: Welcome,
+    nextState: 'Input'
   },
   '/Input': {
-    component: Input
+    name: 'Input',
+    component: Input,
+    prevState: 'Welcome',
+    nextState: 'Final'
   },
   '/Final': {
-    component: Final
+    name: 'Final',
+    component: Final,
+    nextState: 'Welcome'
   }
 })
 
