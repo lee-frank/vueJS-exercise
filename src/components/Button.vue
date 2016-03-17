@@ -1,5 +1,5 @@
 <template>
-  <a v-link="{ path: nextState }"><button type="button" class="btn btn-primary-outline">Next - {{nextState}}</button></a>
+  <a v-link="{ path: nextState }"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Next - {{nextState}}</button></a>
 </template>
 
 <script>

@@ -1,11 +1,17 @@
 <template>
   <div class="Input">
     <h1>Fill out some data below!</h1>
-    <label>Name</label>
-    <input type="text" :value="contact.name" v-model="name"/>
-    <button type="button" class="btn btn-primary-outline" @click="updateName(name)">Update Name</button>
+
+    <form action="#">
+      <div class="mdl-textfield mdl-js-textfield">
+        <input type="text" :value="contact.name" v-model="name" class="mdl-textfield__input" id="name" />
+        <label class="mdl-textfield__label" for="name"></label>
+      </div>
+    </form>
+
+    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" @click="updateName(name)">Update Name</button>
     <br /><br />
-    <a v-link="'Welcome'"><button type="button" class="btn btn-primary-outline">Back</button></a>
+    <a v-link="'Welcome'"><button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Back</button></a>
 
     <button-component :next-state="nextState"></Button>
   </div>
