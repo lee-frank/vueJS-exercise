@@ -4,12 +4,12 @@
 
     <form action="#">
       <div class="mdl-textfield mdl-js-textfield">
-        <input type="text" :value="contact.name" v-model="name" class="mdl-textfield__input" id="name" />
+        <input type="text" :value="getContact.name" v-model="getContact.name" class="mdl-textfield__input" id="name" />
         <label class="mdl-textfield__label" for="name"></label>
       </div>
     </form>
 
-    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" @click="updateName(name)">Update Name</button>
+    <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" @click="setContact(name)">Update Name</button>
     <br /><br />
     <a v-link="'Welcome'"><button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Back</button></a>
 
@@ -27,19 +27,18 @@
     },
     methods: {
     // Call the Vuex updateName action
-      updateName (name) {
-        this.updateName({ name })
+      setContact (name) {
+        this.updateName(name)
       }
     },
     data () {
       return {
-        name: '',
         nextState: this.$route.nextState
       }
     },
     vuex: {
       getters: {
-        contact: state => state.contact
+        getContact: state => state.contact
       },
       actions: {
         updateName

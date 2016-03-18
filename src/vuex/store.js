@@ -7,7 +7,7 @@ Vue.use(Vuex)
 // each Vuex instance is just a single state tree.
 const state = {
   contact: {
-    name: 'Frank'
+    name: 'Frankie'
   }
 }
 
